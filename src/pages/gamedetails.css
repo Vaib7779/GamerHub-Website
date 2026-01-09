@@ -1,0 +1,77 @@
+.gamedetails-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.gamedetails-container h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.details-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+}
+
+.details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.details-info p {
+  margin: 0;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  border-left: 4px solid #00ffff;
+  color: #dddddd;
+  transition: background 0.2s ease;
+}
+
+.details-info p:hover {
+  background: #222;
+}
+
+.details-info strong {
+  color: #00ffff;
+}
+
+/* ✅ Centered Add to Cart button */
+.cart-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.big-cart-btn {
+  padding: 16px 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: #00ffff;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.big-cart-btn:hover {
+  background: #00e6e6;
+  transform: scale(1.05);
+}
