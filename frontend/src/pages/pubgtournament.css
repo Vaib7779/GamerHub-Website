@@ -1,0 +1,63 @@
+.tournament-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.tournament-banner {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tournament-banner h1 {
+  font-size: 2.4rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.tournament-banner p {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.tournament-info,
+.tournament-rules,
+.tournament-prizes {
+  margin-bottom: 30px;
+}
+
+.tournament-info h2,
+.tournament-rules h2,
+.tournament-prizes h2 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.tournament-rules ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.tournament-register {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.register-btn {
+  padding: 12px 24px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.register-btn:hover {
+  background: #ff4d5a;
+}

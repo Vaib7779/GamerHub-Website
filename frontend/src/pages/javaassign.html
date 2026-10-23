@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        function getFormValues(){
+            let firstname =document.getElementById("firstname").value;
+            let lastname =document.getElementById("lastname").value;
+console.log(firstname);
+console.log(lastname);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="getFormValues();return false;">
+first name: <input type="text" id="firstname"><br>
+last name: <input type="text" id="lastname"><br>
+<input type="submit" value="Submit">
+    </form>
+</body>
+</html>
