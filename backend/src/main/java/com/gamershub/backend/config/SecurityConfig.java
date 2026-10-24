@@ -36,14 +36,10 @@ public class SecurityConfig {
 
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(
-    List.of(
-        System.getenv().getOrDefault(
-            "FRONTEND_URL",
-            "http://localhost:3000"
-        )
-    )
-);
+        config.setAllowedOrigins(List.of(
+            "http://localhost:3000",
+            "https://gamer-hub-website-two.vercel.app"
+        ));
 
         config.setAllowedMethods(
             List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
