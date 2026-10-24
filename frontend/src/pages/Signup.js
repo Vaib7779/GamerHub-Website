@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -12,23 +13,32 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:8080'}/api/auth/signup`, {
-        username,
-        email,
-        password
-      });
 
-      if (res.status === 200) {
-        setMessage("✅ Signup successful!");
-        setTimeout(() => navigate("/login"), 1000);
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/auth/signup`,
+        {
+          username,
+          email,
+          password
+        }
+      );
+
+      if (res.status === 200 || res.status === 201) {
+        setMessage('✅ Signup successful!');
+        setTimeout(() => navigate('/login'), 1000);
       }
     } catch (err) {
-      console.error("Signup error:", err);
+      console.error('Signup error:', err);
+
       if (err.response && err.response.data) {
-        setMessage(err.response.data);
+        setMessage(
+          typeof err.response.data === 'string'
+            ? err.response.data
+            : '❌ Signup failed. Please try again.'
+        );
       } else {
-        setMessage("❌ Error signing up");
+        setMessage('❌ Unable to connect to server');
       }
     }
   };
@@ -47,6 +57,7 @@ function Signup() {
       <div className="signup-box">
         <h2>Gamers Hub</h2>
         <h2>Create Account</h2>
+
         <form onSubmit={handleSignup}>
           <input
             type="text"
@@ -55,6 +66,7 @@ function Signup() {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
+
           <input
             type="email"
             placeholder="Email"
@@ -62,6 +74,7 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -69,10 +82,16 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
           <button type="submit">Sign Up</button>
         </form>
+
         <p>{message}</p>
-        <button className="signup-button" onClick={() => navigate('/login')}>
+
+        <button
+          className="signup-button"
+          onClick={() => navigate('/login')}
+        >
           Back to Login
         </button>
       </div>
